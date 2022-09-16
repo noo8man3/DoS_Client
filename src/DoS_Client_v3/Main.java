@@ -1,12 +1,5 @@
 package DoS_Client_v3;
 
-import java.io.IOException;
-import java.net.DatagramPacket;
-import java.net.DatagramSocket;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
-import java.util.Timer;
-import java.util.TimerTask;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -14,6 +7,15 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.util.Objects;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Main extends Application {
     
@@ -37,8 +39,8 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         initialize();
         Scene mainScene = new Scene(mp.getMainPane(), 400, 500);
-        mainScene.getStylesheets().add(Main.class.getResource("ViewStyle.css").
-                toExternalForm());
+        mainScene.getStylesheets().add(Objects.requireNonNull(Main.class.
+                        getResource("ViewStyle.css")).toExternalForm());
         primaryStage.setTitle("Low Orbit Gunpowder Cannon");
         primaryStage.getIcons().add(new Image("file:programicon.png"));
         primaryStage.setScene(mainScene);
